@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import PromoSectionLarge from '../components/promo/promoSectionLarge';
+import CardCategory from '../components/products/cardCategory';
+import IncentiveCols from '../components/incentives/incentiveCols';
+import ProductDisplay from '../components/products/categoryFilters';
+import PageVisitTracker from "../components/NotifcationSystem/PageVisitTracker"
+import CookieBannerModal from "../components/thirdparty/CookieBanner"
+---
+
+<Layout title="Forside">
+	<main>
+    <ComplexNavbar client:only />
+    <PageVisitTracker client:only/>
+    <CookieBannerModal client:only/>
+    <div class="my-3 d-flex justify-content-between">
+      <div class="flex-grow-1 me-3">
+        <PromoSectionLarge bannernumber={1} />
+      </div>
+      <div class="flex-grow-1">
+        <PromoSectionLarge bannernumber={2} />
+      </div>
+    </div>
+    <div>
+      <CardCategory client:only
+      />
+    </div>
+    <div class="mb-5">
+      <IncentiveCols />
+    </div>
+    <div id="productsection">
+      <ProductDisplay client:only/>
+    </div>
+    <ComplexFooter client:only />
+  </main>
+
+</Layout>

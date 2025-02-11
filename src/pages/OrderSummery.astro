@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import OrderSummaries from '../components/order/orderSummaries';
+---
+
+<Layout title="Ordre oversigt">
+	<main>
+    <ComplexNavbar client:only />
+    <h3 style="text-align: center; margin-top: 10px; font-weight: bolder;">Checkout Forms</h3>
+    <OrderSummaries order={null} isadmin={false} client:only/>
+
+    <div style="margin-top: 40px;">
+      <ComplexFooter client:only />
+    </div>
+  </main>
+</Layout>

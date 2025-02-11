@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import Loginformular from '../components/profile/login';
+import {UserRoles} from '../../FrontendRequests/Enums/Usertypes.js'
+---
+
+<Layout title="Login">
+	<main>
+    <ComplexNavbar client:only />
+    <div class="mx-auto text-center w-md-60 mb-5">
+        <h3 style="padding-top: 39px;">Login</h3>
+    </div>
+    <Loginformular client:only/>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

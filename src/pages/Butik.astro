@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import CategoryFilters from '../components/products/categoryFilters';
+---
+
+<Layout title="Butik">
+  <main>
+    <ComplexNavbar client:only />
+    <div class="my-5" id="productsection">
+        <CategoryFilters client:only
+        />
+      </div>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

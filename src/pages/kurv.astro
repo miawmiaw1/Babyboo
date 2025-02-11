@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ShoppingCart from '../components/cart/shoppingCart';
+import {UserRoles} from '../../FrontendRequests/Enums/Usertypes.js'
+import ComplexFooter from '../components/complexFooter';
+---
+
+<Layout title="kurv">
+	<main>
+    <ComplexNavbar client:only />
+    <ShoppingCart client:only/>
+    
+    <div style="margin-top: 40px;">
+      <ComplexFooter client:only />
+    </div>
+  </main>
+
+</Layout>

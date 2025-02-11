@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import KontaktPlade from '../components/contacts/kontaktPlade';
+import { UserRoles } from '../../FrontendRequests/Enums/Usertypes.js';
+---
+
+<Layout title="Om Os">
+  <main>
+    <ComplexNavbar client:only />
+    <KontaktPlade />
+    <div class="mx-auto text-center w-md-60 mb-5">
+      <h3 style="padding-top: 39px;">Hvem er vi</h3>
+      <p style="padding-top: 20px;">
+        Hos <strong>{import.meta.env.STORENAME}</strong> er vi dedikerede til at tilbyde det bedste udvalg af merchandise inspireret af Donald Trump – en figur, der har formet politik, kultur og samtaler verden over.
+      </p>
+      <p style="padding-top: 20px;">
+        Vi ved, at vores kunder søger produkter, der ikke bare skiller sig ud, men også gør en erklæring. Derfor har vi nøje udvalgt vores sortiment, som spænder fra klassisk fan-merchandise til unikke, humoristiske og tankevækkende designs. Uanset om du er tilhænger af hans budskaber, hans stil, eller blot ønsker at eje noget med kant, har vi noget for dig.
+      </p>
+      <p style="padding-top: 20px;">
+        Hos <strong>{import.meta.env.STORENAME}</strong> tror vi på at kombinere kvalitet og kreativitet. Vores produkter er fremstillet med fokus på holdbarhed, komfort og æstetik, så du kan bære din holdning med stolthed – hvad enten det er en T-shirt, en kasket eller et samleobjekt.
+      </p>
+      <p style="padding-top: 20px;">
+        Vi ønsker at skabe en platform for alle, der ønsker at udtrykke sig gennem Trump-inspirerede designs – hvad enten det er med humor, respekt eller en smule provokation. Velkommen til vores univers, hvor politik og popkultur mødes.
+      </p>
+    </div>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

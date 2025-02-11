@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import Categories from '../components/products/Categories';
+import {UserRoles} from '../../FrontendRequests/Enums/Usertypes.js'
+---
+
+<Layout title="Kategorier">
+  <main>
+    <ComplexNavbar client:only />
+    <h2 style="text-align: center;">Kategorier</h2>
+    <Categories client:only/>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

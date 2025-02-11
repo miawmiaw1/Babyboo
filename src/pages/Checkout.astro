@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import CheckoutOrderSummary from '../components/checkout/checkoutOrderSummary';
+import ComplexFooter from '../components/complexFooter';
+---
+
+<Layout title="Kurv">
+	<main>
+    <ComplexNavbar client:only />
+    <h3 style="text-align: center; margin-top: 10px; font-weight: bolder;">Betalings form</h3>
+    <CheckoutOrderSummary client:only/>
+
+    <div style="margin-top: 40px;">
+      <ComplexFooter client:only />
+    </div>
+  </main>
+
+</Layout>

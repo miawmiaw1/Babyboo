@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import Registerformular from '../components/profile/register';
+---
+
+<Layout title="Register">
+	<main>
+    <ComplexNavbar client:only />
+    <div class="mx-auto text-center w-md-60 mb-5">
+        <h3 style="padding-top: 39px;">Register</h3>
+    </div>
+    <Registerformular client:only/>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

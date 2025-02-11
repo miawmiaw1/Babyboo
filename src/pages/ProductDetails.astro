@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import ProductOverviewGallery from '../components/products/productOverviewGallery';
+---
+
+<Layout title="Produkt detaljier">
+  <main>
+    <ComplexNavbar client:only />
+    <div class="my-5 product-overview-container">
+      <ProductOverviewGallery client:only/>
+    </div>
+    <ComplexFooter client:only />
+  </main>
+</Layout>
+
+<style>
+  .product-overview-container {
+    max-width: 80%; /* Adjust the width to control how small the section is */
+    margin: 0 auto; /* Center the container on the page */
+    padding: 20px; /* Add some padding inside the container */
+    border: 1px solid #ddd; /* Add a border to create the 'edges' */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a card-like effect */
+    background-color: #fff; /* Ensure a light background to contrast with the border */
+  }
+</style>

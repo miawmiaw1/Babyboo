@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import KontaktPlade from '../components/contacts/kontaktPlade';
+import KontaktFormular from '../components/contacts/kontaktformular';
+import {UserRoles} from '../../FrontendRequests/Enums/Usertypes.js'
+---
+
+<Layout title="Kontakt">
+	<main>
+    <ComplexNavbar client:only />
+    <KontaktPlade />
+    <div class="mx-auto text-center w-md-60 mb-5">
+        <h3 style="padding-top: 39px;">Skriv til os</h3>
+    </div>
+    <KontaktFormular client:only/>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

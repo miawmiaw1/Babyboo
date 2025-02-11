@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../assets/scss/astro-ecommerce.scss';
+import ComplexNavbar from '../components/complexNavbar';
+import ComplexFooter from '../components/complexFooter';
+import KontaktPlade from '../components/contacts/kontaktPlade';
+import Privatpolitiks from '../components/store/privatpolitik';
+---
+
+<Layout title="Privatpolitik">
+	<main>
+    <ComplexNavbar client:only />
+    <KontaktPlade />
+    <Privatpolitiks client:only/>
+    <ComplexFooter client:only />
+  </main>
+</Layout>

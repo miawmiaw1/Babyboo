@@ -1,0 +1,50 @@
+{
+  "name": "Babyboo",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.1.2",
+    "@astrojs/vercel": "^8.0.1",
+    "@mdi/font": "^7.4.47",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.4.0",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^6.1.1",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "astro": "^5.1.1",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.1",
+    "dotenv": "^16.4.7",
+    "install": "^0.13.0",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.10.0",
+    "npm": "^11.0.0",
+    "pdf-lib": "^1.17.1",
+    "pg": "^8.13.1",
+    "pg-mock": "^1.0.1",
+    "react-bootstrap": "^2.10.7",
+    "react-datepicker": "^8.0.0",
+    "react-dom": "^19.0.0",
+    "stripe": "^17.5.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/lodash": "^4.17.13",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^6.4.17",
+    "sass": "^1.83.0"
+  }
+}
