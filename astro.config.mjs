@@ -26,11 +26,7 @@ export default defineConfig({
         'import.meta.env.STOREADDRESS': JSON.stringify(process.env.STOREADDRESS),
         'import.meta.env.STORECVR': JSON.stringify(process.env.STORECVR),
         'import.meta.env.STOREEMAIL': JSON.stringify(process.env.STOREEMAIL),
-        'import.meta.env.STOREPHONE': JSON.stringify(process.env.STOREPHONE),
-        'import.meta.env.FACEBOOK': JSON.stringify(process.env.FACEBOOK),
-        'import.meta.env.X_TWITTER': JSON.stringify(process.env.X_TWITTER),
-        'import.meta.env.INSTAGRAM': JSON.stringify(process.env.INSTAGRAM),
-        'import.meta.env.LINKEDIN': JSON.stringify(process.env.LINKEDIN)
+        'import.meta.env.STOREPHONE': JSON.stringify(process.env.STOREPHONE)
       },
       resolve: {
         alias: {

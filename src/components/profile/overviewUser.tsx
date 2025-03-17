@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col, Card } from 'react-bootstrap';
-import OrderTable from '../order/OrderTable';
 import { type User} from "../../../FrontendRequests/Requests-Api/User"
 interface Props {
   Userprofile: User;
@@ -81,18 +80,6 @@ const OverviewUser = ({ Userprofile, TotalPrice }: Props) => {
       </style>
 
       <Row>
-        {/* Account Balance Card */}
-        <Col md={6}>
-          <Card className="dashboard-card p-3 mb-3">
-            <p className="icon-wrapper account-icon-placeholder">
-              <i className="account-icon"></i>
-            </p>
-            <h6>Total spent</h6>
-            <h5 className="text-primary">{TotalPrice.toLocaleString()} Kr. <span className="text-muted">Spent</span></h5>
-            <p className="text-muted">On products purchased</p>
-          </Card>
-        </Col>
-
         {/* Loyalty Program Card */}
         <Col md={6}>
           <Card className="dashboard-card p-3 mb-3">
@@ -111,9 +98,6 @@ const OverviewUser = ({ Userprofile, TotalPrice }: Props) => {
             </span>
           </Card>
         </Col>
-        <div>
-          <OrderTable userid={Userprofile.userid.toString()} />
-        </div>
       </Row>
     </>
   );

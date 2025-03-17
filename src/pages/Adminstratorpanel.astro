@@ -2,19 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import '../../assets/scss/astro-ecommerce.scss';
 import ComplexNavbar from '../components/complexNavbar';
-import ComplexFooter from '../components/complexFooter';
-import {UserRoles} from '../../FrontendRequests/Enums/Usertypes.js'
 import Sidebar from '../components/sidebar';
 const links = [
   {
     text: 'Profil',
     component: 'EditUser',
     icon: 'mdi mdi-contacts menu-icon'
-  },
-  {
-    text: 'Instrumentbræt',
-    component: 'Dashboard',
-    icon: 'mdi mdi-view-dashboard-outline'
   },
   {
     text: 'Produkter',
@@ -47,26 +40,6 @@ const links = [
         icon: 'mdi mdi-plus-circle'
       }
     ]
-  },
-  {
-    text: 'Ordre',
-    component: 'OrderPanel',
-    icon: 'mdi mdi-format-list-text'
-  },
-  {
-    text: 'Brugere',
-    component: 'UserTable',
-    icon: 'mdi mdi-face-man-profile'
-  },
-  {
-    text: 'Media',
-    component: 'PromoEdit',
-    icon: 'mdi mdi-picture-in-picture-top-right'
-  },
-  {
-    text: 'Tools',
-    component: 'Toolnavbar',
-    icon: 'mdi mdi-hammer-wrench'
   },
 ];
 ---

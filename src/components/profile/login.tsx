@@ -76,11 +76,6 @@ export default function Loginformular() {
                 Intet brugernavn: <a href="Register" style={{ color: 'blue' }}>Register</a>
               </p>
             </div>
-            <div className="text-center">
-              <p>
-                Glemt Kodeord: <a href="Gendan" style={{ color: 'blue' }}>Gendan</a>
-              </p>
-            </div>
           </div>
         </div>
       </section>

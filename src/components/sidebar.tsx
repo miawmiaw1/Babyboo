@@ -1,19 +1,11 @@
 import React, { useState, useEffect, type JSX } from 'react';
-import ShoppingCart from './cart/shoppingCart';
-import Logud from '../components/profile/logud';
-import Dashboard from './store/dashboard';
 import ProductPanel from './products/productspanel';
 import Addproduct from '../components/products/addproduct';
 import EditProduct from '../components/products/editProduct';
 import CategoryTable from '../components/category/categoryTable';
 import AddCategory from '../components/category/addCategory';
-import OrderPanel from './order/orderPanel';
-import UserTable from './profile/userTable';
 import EditUser from './profile/profile';
-import PromoEdit from './promo/promocomponent';
-import Toolnavbar from './tools/toolsnavbar';
 import {type User, IsLoggedIn, fetchUserById} from "../../FrontendRequests/Requests-Api/User"
-import { UserRoles } from '../../FrontendRequests/Enums/Usertypes';
 
 interface Link {
   text: string;
@@ -33,18 +25,11 @@ type ComponentMap = {
 
 const components: ComponentMap = {
   EditUser,
-  ShoppingCart,
-  Logud,
-  Dashboard,
   ProductPanel,
   Addproduct,
   EditProduct,
   CategoryTable,
   AddCategory,
-  OrderPanel,
-  UserTable,
-  PromoEdit,
-  Toolnavbar
 };
 
 const Sidebar = ({ links }: Props) => {
@@ -93,30 +78,6 @@ const Sidebar = ({ links }: Props) => {
         if (User !== null) {
           setActiveComponent(<EditUser Userprofile={User} isadmin={false} />)
         }
-      } else if (ComponentElement === UserTable) {
-        if (User !== null) {
-          setActiveComponent(<UserTable Userprofile={User} />)
-        }
-      } else if (ComponentElement === ShoppingCart) {
-          setActiveComponent(<ShoppingCart />);
-      } else if (ComponentElement === Dashboard) {
-        if (User !== null) {
-          setActiveComponent(<Dashboard Userprofile={User} />);
-        }
-      } else if (ComponentElement === OrderPanel) {
-        if (User !== null) {
-          if (User.membertypeid == UserRoles.ADMIN || User.membertypeid == UserRoles.WORKER) {
-            setActiveComponent(<OrderPanel isadmin={true} Userprofile={User} />);
-          } else {
-            setActiveComponent(<OrderPanel isadmin={false} Userprofile={User} />);
-          }
-        }
-      } else if (ComponentElement == Logud) {
-        setActiveComponent(<Logud/>);
-      } else if (ComponentElement === PromoEdit) {
-        setActiveComponent(<PromoEdit />);
-      } else if (ComponentElement === Toolnavbar) {
-        setActiveComponent(<Toolnavbar />);
       }
     }
 

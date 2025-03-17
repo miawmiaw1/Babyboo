@@ -1,10 +1,9 @@
 import React, {useEffect, useState } from 'react';
 import { Button, Table, Form, Pagination, Modal } from 'react-bootstrap';
 import { FetchAllCateGories, type Category } from "../../../FrontendRequests/Requests-Api/Category";
-import { GetAllProducts, type Product, DeleteProduct, DeleteProducts } from '../../../FrontendRequests/Requests-Api/Product';
+import { GetAllProducts, type Product, DeleteProduct } from '../../../FrontendRequests/Requests-Api/Product';
 import EditProduct from '../products/editProduct';
 import ViewProduct from './viewproduct';
-import { type CompanyProductStatement, generateProductStatementPDF } from '../FileGenerator/ProductStatement';
 import { DeleteAllImages, isValidLink } from '../../../FrontendRequests/Requests-Api/Images';
 const ProductTable = () => {
 
@@ -178,68 +177,6 @@ const ProductTable = () => {
           onChange={handleSearch}
           className="w-25 h-25"
         />
-        <div className="d-flex gap-2">
-          <Form.Select
-            style={{width: "100px"}}
-            className="mb-3"
-            value={itemsPerPage}
-            onChange={(e) => setItemsPerPage(Number(e.target.value))}
-          >
-            <option value={2}>7</option>
-            <option value={10}>10</option>
-            <option value={15}>15</option>
-          </Form.Select>
-      <Button 
-        className="custom-dropdown-toggle text_style" 
-        variant="warning" 
-        onClick={async () => {
-
-        const sampleStatement: CompanyProductStatement = {
-          companyName: 'Produkt-erklæring',
-          date: (new Date).toLocaleDateString('en-GB'),
-          products: GetProducts as Product[],
-          totalproducts: GetProducts?.length as number
-        };
-
-         const result = await generateProductStatementPDF(sampleStatement);
-
-          const blob = new Blob([result], { type: 'application/pdf' });
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = 'Produkt-erklæring.pdf';
-          link.click();
-
-          console.log('Rapport hentet!');
-        }}
-      >
-        Download PDF
-      </Button>
-      <Button 
-        className="custom-dropdown-toggle text_style" 
-        variant="danger" 
-        onClick={async () => {
-          if (Selectedcategoryid != null) {
-
-            const filteredProducts = GetProducts?.filter((product) => {
-              return (
-                (product.categories[0].categoryid === Selectedcategoryid));
-            }) || [];
-
-            if (filteredProducts && filteredProducts.length > 0) {
-              const deleteresult =  await DeleteProducts(filteredProducts[0].productid as number, filteredProducts[filteredProducts.length - 1].productid)
-
-              if (deleteresult.result) {
-                alert(`Alle produkter er slettet: ${deleteresult.data}`)
-              }
-            }
-          } else {
-            alert("Vælg kategori først")
-          }
-        }}
-      >
-        Slet alle produkter
-      </Button>
-        </div>
       </div>
 
       {/* SECTION: TABLE */}

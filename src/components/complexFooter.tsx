@@ -9,16 +9,6 @@ export default function ComplexFooter() {
     setEmail(e.target.value);
   };
 
-  const handleSubscribe = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for validating email
-    if (emailRegex.test(email)) {
-      alert("Tilmeldt nyhedsbrev");
-      setEmail(""); // Clear the email field after successful subscription
-    } else {
-      alert("Indtast en gyldig emailadresse");
-    }
-  };
-
   useEffect(() => {
     // Dynamically load the Trustpilot script
     const script = document.createElement('script');
@@ -73,11 +63,6 @@ export default function ComplexFooter() {
             <h3 className="text-lg font-semibold text-gray-900">Godt at vide</h3>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="/About" className="text-gray-600 hover:text-gray-900">
-                  Om os
-                </a>
-              </li>
-              <li className="mb-2">
                 <a href="/Privatpolitik" className="text-blue-500 hover:text-blue-600">
                   Information
                 </a>
@@ -116,11 +101,6 @@ export default function ComplexFooter() {
             <h3 className="text-lg font-semibold text-gray-900">Kunderservice</h3>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="/Kontakt" className="text-gray-600 hover:text-gray-900">
-                  Kontakt os
-                </a>
-              </li>
-              <li className="mb-2">
                 <a href="/Privatpolitik" className="text-blue-500 hover:text-blue-600">
                   Fragt - og levering
                 </a>
@@ -136,31 +116,6 @@ export default function ComplexFooter() {
                 </a>
               </li>
             </ul>
-          </Col>
-
-          {/* Newsletter Column */}
-          <Col md={6} lg={3}>
-            <h3 className="text-lg font-semibold text-gray-900">Nyhedsbrev</h3>
-            <p className="text-gray-600">
-              Tilmeld dig vores nyhedsbrev for at få din ugentlige dosis af nyheder, opdateringer, tips og særlige tilbud.
-            </p>
-            <Form>
-              <InputGroup className="mb-3">
-                <InputGroup.Text>
-                  <i className="text-gray-400 mdi mdi-email-heart-outline" />
-                </InputGroup.Text>
-                <Form.Control
-                  type="email"
-                  placeholder="Indtast din email adresse"
-                  aria-label="Email Address"
-                  value={email}
-                  onChange={handleEmailChange}
-                />
-              </InputGroup>
-              <Button variant="primary" className="w-100" onClick={handleSubscribe}>
-                Tilmeld
-              </Button>
-            </Form>
           </Col>
         </Row>
 
@@ -193,20 +148,6 @@ export default function ComplexFooter() {
                   <strong>|  </strong>
                   <strong>CVR: {import.meta.env.STORECVR}</strong>
                 </a>
-            </div>
-            <div>
-            <a href={import.meta.env.FACEBOOK} className=" mx-3">
-              <i className="mdi mdi-facebook" aria-hidden="true"></i>
-            </a>
-            <a href={import.meta.env.X_TWITTER} className=" mx-3">
-              <i className="mdi mdi-twitter" aria-hidden="true"></i>
-            </a>
-            <a href={import.meta.env.INSTAGRAM} className=" mx-3">
-              <i className="mdi mdi-instagram" aria-hidden="true"></i>
-            </a>
-            <a href={import.meta.env.LINKEDIN} className=" mx-3">
-              <i className="mdi mdi-linkedin" aria-hidden="true"></i>
-            </a>
             </div>
             <div className="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="67961ff417619e19c8e61c8f" data-style-height="52px" data-style-width="100%">
                   <a href="https://dk.trustpilot.com/review/trumpbuybutik.dk" target="_blank" rel="noopener">Trustpilot</a>

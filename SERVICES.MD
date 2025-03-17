@@ -18,24 +18,11 @@ NOTE: Brug denne konto for email login
     - eupkontakt@gmail.com
     - Ahmedahmed!1
 
-** Railway: Database hosting **
-    https://railway.com/new
-    
-    - eupkontakt@gmail.com
-    - LandingImage1!
-    - CONNECT WITH GITHUB
-
-** Stripe: Credit card payment **
-    https://stripe.com/
-    BackupCode: hnef-ghip-udte-wlve-yaym
-    - eupkontakt@gmail.com
-    - LandingImage1!
-
 ** Cloudinary: Image upload **
     https://cloudinary.com
 
     - eupkontakt@gmail.com
-    - LandingImage1!
+    - LOGIN WITH GOOGLE
 
 --- ### UNUSED ### ---
 

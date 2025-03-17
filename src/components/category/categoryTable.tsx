@@ -163,43 +163,6 @@ const CategoryTable = () => {
             onChange={handleSearch}
             className="w-25 h-25"
           />
-          <div className="d-flex gap-2">
-            <Form.Select
-              style={{width: "100px"}}
-              className="mb-3"
-              value={itemsPerPage}
-              onChange={(e) => setItemsPerPage(Number(e.target.value))}
-            >
-              <option value={2}>7</option>
-              <option value={10}>10</option>
-              <option value={15}>15</option>
-            </Form.Select>
-          <Button 
-            className="custom-dropdown-toggle text_style" 
-            variant="warning" 
-            onClick={async () => {
-
-            const sampleStatement: CompanyCategoryStatement = {
-              companyName: 'Kategori-erklæring',
-              date: (new Date).toLocaleDateString('en-GB'),
-              Categories: categories as Category[],
-              totalCategories: categories?.length as number
-            };
-
-            const result = await generateCategoryStatementPDF(sampleStatement);
-
-              const blob = new Blob([result], { type: 'application/pdf' });
-              const link = document.createElement('a');
-              link.href = URL.createObjectURL(blob);
-              link.download = 'Kategori-erklæring.pdf';
-              link.click();
-
-              console.log('Rapport hentet!');
-            }}
-          >
-            Download PDF
-          </Button>
-          </div>
         </div>
 
         {/* SECTION: TABLE */}

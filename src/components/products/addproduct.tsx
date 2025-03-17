@@ -7,7 +7,6 @@ import type { Color } from "../../../FrontendRequests/Requests-Api/Color";
 import { GetAllSizes, type Sizes } from "../../../FrontendRequests/Requests-Api/Size";
 import { AddProduct, type Product, type ProductColorSize, type ProductImage, DeleteProduct } from "../../../FrontendRequests/Requests-Api/Product";
 import { AddProductImage, generateUniqueImageName } from "../../../FrontendRequests/Requests-Api/Images";
-import { calculateProductTaxes, type ProductTaxResult } from "../../../FrontendRequests/Accounting/Momscalculator.ts";
 
 const Addproduct = () => {
   const [ProductName, setProductName] = useState<string>("");
@@ -311,10 +310,8 @@ const Addproduct = () => {
       }
 
       const imagename = generateUniqueImageName();
-
-      const taxresult = calculateProductTaxes(ProductPrice, ProductProfitMargin, Inkl_moms)
   
-      const newProduct = createProductObject(category, imagename, taxresult);
+      const newProduct = createProductObject(category, imagename);
       const productResponse = await AddProduct(newProduct, true);
   
       if (productResponse.result) {
@@ -412,16 +409,16 @@ const Addproduct = () => {
     return categories?.find((cat) => cat.categoryid === categoryId) as Category;
   };
   
-  const createProductObject = (category: Category, imagename: string, taxresult: ProductTaxResult): Product => ({
+  const createProductObject = (category: Category, imagename: string): Product => ({
     productid: 0,
     name: ProductName.trim(),
     description: ProductDescription.trim(),
     features: productFeatures.join(","),
     link: ProductLink.trim(),
-    købspris_ex_moms: taxresult.købspris_ex_moms,
-    salgpris_ex_moms: taxresult.salgpris_ex_moms,
-    indgående_moms: taxresult.indgående_moms,
-    udgående_moms: taxresult.udgående_moms,
+    købspris_ex_moms: 1,
+    salgpris_ex_moms: 1,
+    indgående_moms: 1,
+    udgående_moms: 1,
     tags: productTags.join(","),
     barcode: Barcode as number,
     images: [

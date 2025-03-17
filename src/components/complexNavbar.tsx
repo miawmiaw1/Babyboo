@@ -53,8 +53,6 @@ const ComplexNavbar = () => {
             {[
               { label: 'Butik', link: '/Butik' },
               { label: 'Kategorier', link: '/Kategorier' },
-              { label: 'Kontakt', link: '/Kontakt' },
-              { label: 'Om os', link: '/About' },
               { label: 'Privatpolitik', link: '/Privatpolitik' },
             ].map((item, index) => (
               <React.Fragment key={index}>
