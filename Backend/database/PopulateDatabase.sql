@@ -86,18 +86,6 @@ INSERT INTO Product (name, description, manufacturer, features, link, købspris_
 ('Coffee', 'A coffee drink that is light and beany. It is enjoyed very good with some milk and cream. Fit for every caffeine hungry person', 'Cofeees', 'Good coffee beans, 100% natural farmed, Very high in antioxidents', 'https://www.google.com/', 8, 9.6, 2, 2.4, 'Coffee, plant', 532343243444);
 
 
--- Populate Orders table
-INSERT INTO Orders (order_date, firstname, lastname, email, phonenumber, address, postalcode, city, country, parcel, ishomedelivery, totalprice, stripepaymentid, userid, statusid, paymentid) 
-VALUES
-('2024-09-01', 'John', 'Doe', 'tib-tob@hotmail.com', 52775341, 'Guldsmedevej 41', 2610, 'Rødovre', 'Denmark', 'Home Delivery', TRUE, 100, 'pi_3QdnZyRrjFQfqw0K1CwFoBQc', 1, 2, 1),
-('2024-09-02', 'Jane', 'Smith', 'warriors430@hotmail.com', 57483919, 'Nørrebrogade', 2200, 'København', 'Denmark', 'Islev vin og tobak, Islevbrovej 25, Rødovre 2610', FALSE, 100, 'pi_3QdnZyRrjFQfqw0K1CwFoBQc', 2, 1, 2);
-
--- Populate Orders_Product table
-INSERT INTO Orders_Product (orderid, productid, productname, colorname, sizename, quantity, købspris_ex_moms, salgpris_ex_moms, indgående_moms, udgående_moms) VALUES
-(1, 1, 'Laptop', 'Red', 'Small', 1, 80, 96, 20, 24),
-(2, 1, 'Headphones', 'Black', 'Small', 1, 80, 96, 20, 24),
-(2, 2, 'Mouse', 'White', 'Small', 1, 200, 240, 50, 60);
-
 -- Populate ProductColor table
 INSERT INTO ProductColorSize (productid, colorid, sizeid, quantity) VALUES
 (1, 1, 1, 1), -- Smartphone, Red, Small, Quantity: 1

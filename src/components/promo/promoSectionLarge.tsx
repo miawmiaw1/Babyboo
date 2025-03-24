@@ -14,7 +14,12 @@ export default function PromoSectionLarge({
         <div
           className="promo-section"
           style={{
-            backgroundImage: `url(https://res.cloudinary.com/${import.meta.env.CLOUDINARY_CLOUD_NAME}/image/upload/v${new Date().getTime()}/${Folders.MEDIA}/banner${bannernumber}.jpg)`,
+            backgroundImage:
+            bannernumber === 1
+              ? `url(https://res.cloudinary.com/dbrlhsgqv/image/upload/v1742836836/banner1_uy51qr.jpg)`
+              : bannernumber === 2
+              ? `url(https://res.cloudinary.com/dbrlhsgqv/image/upload/v1742836842/banner2_yqso8h.jpg)`
+              : 'none', // Fallback
             backgroundSize: 'cover', // Ensure the image covers the div
             backgroundPosition: 'top',
             height: '360px', // Fixed height

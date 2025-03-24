@@ -21,8 +21,14 @@ NOTE: Brug denne konto for email login
 ** Cloudinary: Image upload **
     https://cloudinary.com
 
-    - eupkontakt@gmail.com
-    - LOGIN WITH GOOGLE
+    - energidrikkevoxami@gmail.com
+    - Ahmedahmed1!
+
+** Stripe: Stripe **
+    https://dashboard.stripe.com/
+
+    - energidrikkevoxami@gmail.com
+    - Ahmedahmed1!
 
 --- ### UNUSED ### ---
 
